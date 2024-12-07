@@ -82,16 +82,16 @@ class AdminController {
                 exit; // Kết thúc script
             }
         }
-        // Hiển thị trang thêm tin tức
+            // Hiển thị trang thêm tin tức (giao diện để người dùng nhập dữ liệu).
         include 'views/admin/news/add.php';
     }
 
     // Phương thức chỉnh sửa tin tức
     public function editNews() {
         $this->requireLogin(); // Kiểm tra quyền truy cập
-        $id = $_GET['id']; // Lấy ID của tin tức từ URL
+        $id = $_GET['id']; // Lấy ID của tin tức từ
         $news = News::getById($id); // Lấy thông tin tin tức từ cơ sở dữ liệu
-        // Hiển thị trang chỉnh sửa tin tức
+        // Hiển thị trang chỉnh sửa tin tức (form để người dùng chỉnh sửa thông tin).
         include 'views/admin/news/edit.php';
     }
 
@@ -101,7 +101,7 @@ class AdminController {
         // Kiểm tra xem phương thức yêu cầu có phải là POST không
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Lấy dữ liệu từ form
-            $id = $_GET['id']; // Lấy ID từ URL
+            $id = $_GET['id']; // Lấy ID 
             $title = $_POST['title'];
             $content = $_POST['content'];
             $image = $_POST['image'];
@@ -109,19 +109,14 @@ class AdminController {
             // Cập nhật tin tức trong cơ sở dữ liệu
             if (News::update($id, $title, $content, $image, $category_id)) {
                 echo "<script>alert('Sửa tin tức thành công');</script>"; // Thông báo thành công
-                // Chuyển hướng về bảng điều khiển
+                // Chuyển hướng
                 header('Location: index.php?controller=admin&action=dashboard');
-                exit; // Kết thúc script
+                exit; // Kết thúc 
             }
         }
     }
 
-    /**
-     * Phương thức deleteNews
-     * 
-     * Xóa một tin tức khỏi cơ sở dữ liệu.
-     * Dựa vào id lấy từ URL, gọi model News để thực hiện xóa.
-     */
+   
     public function deleteNews() {
         $this->requireLogin(); // Kiểm tra quyền truy cập
         $id = $_GET['id']; // Lấy ID của tin tức từ URL
@@ -130,7 +125,7 @@ class AdminController {
             echo "<script>alert('Xóa tin tức thành công');</script>"; // Thông báo thành công
             // Chuyển hướng về bảng điều khiển
             header('Location: index.php?controller=admin&action=dashboard');
-            exit; // Kết thúc script
+            exit; // Kết thúc
         }
     }
 }
