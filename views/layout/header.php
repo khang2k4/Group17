@@ -7,7 +7,7 @@
     </div>
     <!-- Nút Đăng Nhập -->
     <div>
-        <a href="login.php" style="text-decoration: none; font-size: 16px; padding: 10px 20px; border-radius: 5px; background-color: #007bff; color: #fff; box-shadow: 0px 2px 4px rgba(0, 123, 255, 0.5); transition: all 0.3s ease;">ĐĂNG NHẬP</a>
+        <a href="./views/admin/login.php" style="text-decoration: none; font-size: 16px; padding: 10px 20px; border-radius: 5px; background-color: #007bff; color: #fff; box-shadow: 0px 2px 4px rgba(0, 123, 255, 0.5); transition: all 0.3s ease;">ĐĂNG NHẬP</a>
     </div>
 </div>
 
