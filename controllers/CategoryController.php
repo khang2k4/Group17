@@ -1,4 +1,5 @@
 <?php
+//nhúng file
 require_once 'models/Category.php';
 
 class CategoryController {
@@ -6,7 +7,7 @@ class CategoryController {
         $categories = Category::getAllCategories();// Lấy tất cả các danh mục từ cơ sở dữ liệu thông qua phương thức `getAllCategories` của model `Category`.
         include 'views/admin/category/index.php';// Hiển thị giao diện danh sách các danh mục.
     }
-
+//thêm
     public function add() {
         // Kiểm tra xem phương thức yêu cầu có phải là POST không (chỉ xử lý khi form thêm danh mục được gửi).
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,7 +20,7 @@ class CategoryController {
         }
         include 'views/admin/category/add.php';
     }
-
+//sửa
     public function edit() {
         $id = $_GET['id']; // Lấy ID của danh mục
         $category = Category::getCategoriesById($id);
@@ -33,7 +34,7 @@ class CategoryController {
         }
         include 'views/admin/category/edit.php';
     }
-
+//xóa
     public function delete() {
         $id = $_GET['id'];// Lấy ID của danh mục 
          // Gọi phương thức `delete` trong model `Category` để xóa danh mục dựa trên ID.
