@@ -21,8 +21,9 @@ class CategoryController {
     }
 
     public function edit() {
-        $id = $_GET['id'];
+        $id = $_GET['id']; // Lấy ID của danh mục
         $category = Category::getCategoriesById($id);
+        // Kiểm tra xem phương thức yêu cầu có phải là POST không.
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = $_POST['name'];
             if (Category::update($id, $name)) {
@@ -34,7 +35,8 @@ class CategoryController {
     }
 
     public function delete() {
-        $id = $_GET['id'];
+        $id = $_GET['id'];// Lấy ID của danh mục 
+         // Gọi phương thức `delete` trong model `Category` để xóa danh mục dựa trên ID.
         if (Category::delete($id)) {
             header('Location: index.php?controller=category&action=index');
             exit;
