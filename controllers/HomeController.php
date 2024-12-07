@@ -1,4 +1,26 @@
 <?php
+<<<<<<< HEAD
+require_once 'models/News.php';
+
+class HomeController {
+    public function index() {
+        $news = News::getAll();
+        include 'views/news/index.php';
+    }
+
+    public function detail() {
+        $id = $_GET['id'];
+        $newsItem = News::getById($id);
+        include 'views/news/detail.php';
+    }
+    public function search() {
+        $keyword = $_GET['keyword'] ?? '';
+        $news = News::search($keyword);
+        include 'views/news/index.php';
+    }
+}
+
+=======
 require_once './config/database.php';
 
 class HomeController {
@@ -20,3 +42,4 @@ class HomeController {
     }
 }
 ?>
+>>>>>>> 875d35e88bdd5dca620c5f9a8fca3f26a551d691

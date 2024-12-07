@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+Options -Indexes
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+=======
 RewriteEngine On
 
 # Nếu URL là thư mục gốc và không có chỉ định file cụ thể, chuyển hướng đến index.php
@@ -9,3 +17,4 @@ RewriteRule ^$ index.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [L]
+>>>>>>> 875d35e88bdd5dca620c5f9a8fca3f26a551d691
