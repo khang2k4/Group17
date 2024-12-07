@@ -1,4 +1,7 @@
-<?php include './views/layout/header.php'; ?>
+<?php
+ //+index.php
+include 'controllers/HomeController.php';
+include './views/layout/header.php'; ?>
 
 <div style="padding: 30px 20px; background-color: #f9f9f9; font-family: Arial, sans-serif; min-height: 100vh;">
     <h2 style="text-align: center; font-size: 28px; margin-bottom: 30px; color: #333; font-weight: bold;">Danh Sách Tin Tức</h2>
