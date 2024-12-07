@@ -1,5 +1,5 @@
 <?php
-//ket noi voi csdl
+//kết nối với cơ sở dữ liệu
 class connDB
 {
     private static $conn = null;
