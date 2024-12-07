@@ -1,11 +1,11 @@
-
+C
 --datsbase 
-CREATE DATABASE tlunews;
+REATE DATABASE tlunews;
 USE tlunews;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(256) NOT NULL,
+    username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     role INT NOT NULL CHECK (role IN (0, 1)) -- 0: khách, 1: quản trị viên
 );

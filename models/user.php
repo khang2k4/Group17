@@ -1,26 +1,17 @@
 <?php
-require_once 'config/database.php';
+require_once 'config/connDB.php';
+class User{
+    public static function authenticate($username, $password){
+        $db = connDB::getConnection();
+        $stmt = $db->prepare("SELECT * FROM users WHERE username =? ");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
 
-class User {
-    private $pdo;
-
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
-
-    // Hàm kiểm tra thông tin đăng nhập
-    public function checkLogin($username, $password) {
-        $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-
-        try {
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            die("Lỗi truy vấn: " . $e->getMessage());
+          // Kiểm tra nếu người dùng tồn tại và mật khẩu khớp
+        // So sánh mật khẩu từ cơ sở dữ liệu với mật khẩu đầu vào
+        if($user && $password === $user['password']){
+            return $user;
         }
+        return false;
     }
 }
-?>
