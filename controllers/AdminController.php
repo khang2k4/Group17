@@ -46,18 +46,13 @@ class AdminController {
 }
 
 
-    /**
-     * Phương thức requireLogin
-     * Kiểm tra xem người dùng đã đăng nhập chưa và có phải admin không.
-     * Nếu không, chuyển hướng về trang chủ.
-     */
     public function requireLogin(){
         session_start(); // Bắt đầu phiên làm việc
         // Kiểm tra xem người dùng đã đăng nhập và có quyền admin (role = 1)
         if(!isset($_SESSION['user']) || $_SESSION['user']['role'] != 1){
             // Nếu không, chuyển hướng về trang tin tức
             header('Location: index.php?controller=news&action=index');
-            exit; // Kết thúc script
+            exit; 
         }
     }  
 
@@ -65,7 +60,7 @@ class AdminController {
     public function dashboard() {
         $this->requireLogin(); // Kiểm tra quyền truy cập
         $news = News::getAll(); // Lấy tất cả tin tức từ mô hình News
-        // Hiển thị trang bảng điều khiển
+        // hiển thị trang bảng điều khiển
         include 'views/admin/dashboard.php';
     }
 
