@@ -6,36 +6,45 @@ require_once 'models/User.php';  // Nhúng mô hình User để xử lý ngườ
 class AdminController {
     // Phương thức xử lý đăng nhập
     public function login(){
-        // Kiểm tra xem phương thức yêu cầu có phải là POST không
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            // Lấy tên đăng nhập và mật khẩu từ form
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            // Xác thực người dùng thông qua mô hình User
-            $user = User::authenticate($username, $password);
-            // Nếu xác thực thành công
-            if($user){
-                session_start(); // Bắt đầu phiên làm việc
-                $_SESSION['user'] = $user; // Lưu thông tin người dùng vào session
-                // Chuyển hướng đến bảng điều khiển admin
-                header('Location: index.php?controller=admin&action=dashboard');
-                exit; // Kết thúc script để không chạy thêm mã nào khác
-            }else{
-                // Nếu xác thực thất bại, hiển thị thông báo lỗi
-                $error = 'Tên đăng nhập hoặc mật khẩu không đúng!';
-            }
+    // Kiểm tra xem phương thức yêu cầu có phải là POST không (người dùng đã gửi form đăng nhập).
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        // Lấy dữ liệu từ form đăng nhập.
+        $username = $_POST['username']; // Lấy tên đăng nhập do người dùng nhập.
+        $password = $_POST['password']; // Lấy mật khẩu do người dùng nhập.
+
+        // Xác thực thông tin người dùng thông qua phương thức `authenticate` của lớp `User`.
+        $user = User::authenticate($username, $password);
+
+        // Nếu xác thực thành công (hàm `authenticate` trả về thông tin người dùng).
+        if($user){
+            session_start(); // Khởi tạo phiên làm việc (session) để lưu trữ thông tin đăng nhập.
+            $_SESSION['user'] = $user; // Lưu thông tin người dùng vào session để sử dụng trong các trang khác.
+
+            // Chuyển hướng đến bảng điều khiển dành cho admin.
+            header('Location: index.php?controller=admin&action=dashboard');
+            exit; // Kết thúc script để ngăn việc thực thi các mã sau lệnh chuyển hướng.
+        } else {
+            // Nếu xác thực thất bại, gán thông báo lỗi vào biến `$error`.
+            $error = 'Tên đăng nhập hoặc mật khẩu không đúng!';
         }
+    }
+    // Hiển thị trang đăng nhập (form đăng nhập) nếu không có POST hoặc xác thực thất bại.
+    include 'views/admin/login.php';
+}
+
         // Hiển thị trang đăng nhập
         include 'views/admin/login.php';
     }
 
     // Phương thức xử lý đăng xuất
-    public function logout(){
-        session_start(); // Bắt đầu phiên làm việc
-        session_destroy(); // Hủy phiên làm việc
-        // Chuyển hướng về trang đăng nhập
-        header('Location: index.php?controller=admin&action=login');
-    }
+   public function logout(){
+    session_start(); // Bắt đầu phiên làm việc hiện tại (nếu có).
+    session_destroy(); // Hủy toàn bộ phiên làm việc, xóa thông tin người dùng đã lưu trữ.
+
+    // Chuyển hướng về trang đăng nhập để bắt đầu lại.
+    header('Location: index.php?controller=admin&action=login');
+}
+
 
     /**
      * Phương thức requireLogin
