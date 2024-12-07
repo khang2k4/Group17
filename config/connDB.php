@@ -1,9 +1,9 @@
 <?php
-//kết nối với cơ sở dữ liệu
+//kết nối csdl
 class connDB
 {
     private static $conn = null;
-
+//hàm kết nối
     public static function getConnection()
     {
 
@@ -20,7 +20,7 @@ class connDB
             }
         }
         return self::$conn;
-         // Trả về đối tượng kết nối PDO
+         // Trả về đối tượng kết nối pdo
     }
 }
 
