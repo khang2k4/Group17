@@ -11,7 +11,7 @@ class HomeController {
 //xem chi tiết
     public function detail() {
         $id = $_GET['id'];//lấy id
-        $newsItem = News::getById($id);
+        $newsItem = News::getById($id);//hàm lấy id
         include 'views/news/detail.php';
     }
     //tìm kiếm
