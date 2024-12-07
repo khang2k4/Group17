@@ -5,7 +5,7 @@ require_once 'models/News.php';
 class HomeController {
     //hiển thị
     public function index() {
-        $news = News::getAll();
+        $news = News::getAll();//hàm lấy tất cả
         include 'views/news/index.php';
     }
 //xem chi tiết
