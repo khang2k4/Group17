@@ -2,6 +2,7 @@
 require_once 'models/News.php';
 class NewsController
 {
+    //newmodel
     private $newsModel;
 
     public function __construct()
