@@ -1,4 +1,5 @@
 <?php
+//kết nối 
 require_once 'models/News.php';
 
 class HomeController {
@@ -9,7 +10,7 @@ class HomeController {
     }
 //xem chi tiết
     public function detail() {
-        $id = $_GET['id'];
+        $id = $_GET['id'];//lấy id
         $newsItem = News::getById($id);
         include 'views/news/detail.php';
     }
