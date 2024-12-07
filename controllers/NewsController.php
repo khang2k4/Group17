@@ -1,4 +1,5 @@
 <?php
+// Nhúng file News.php từ thư mục models, chỉ thực hiện một lần
 require_once 'models/News.php';
 class NewsController
 {
