@@ -16,7 +16,7 @@ class HomeController {
     }
     //tìm kiếm
     public function search() {
-        $keyword = $_GET['keyword'] ?? '';
+        $keyword = $_GET['keyword'] ?? '';//từ khóa
         $news = News::search($keyword);
         include 'views/news/index.php';
     }
