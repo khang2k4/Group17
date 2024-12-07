@@ -50,7 +50,7 @@
             <!-- Tin chính -->
             <div class="col-md-8">
                 <div class="card mb-4">
-                    <img src="assets/images/news1.jpg" class="card-img-top" alt="Tin chính">
+                    <img src="assets/images/image1.jpg" class="card-img-top" alt="Tin chính">
                     <div class="card-body">
                         <h5 class="card-title">Tiêu đề bài viết</h5>
                         <p class="card-text">Đây là đoạn mô tả ngắn về bài viết. Nhấn để xem chi tiết.</p>
@@ -61,14 +61,14 @@
             <!-- Tin phụ -->
             <div class="col-md-4">
                 <div class="card mb-3">
-                    <img src="assets/images/news2.jpg" class="card-img-top" alt="Tin phụ">
+                    <img src="assets/images/image2.jpg" class="card-img-top" alt="Tin phụ">
                     <div class="card-body">
                         <h6 class="card-title">Tiêu đề bài viết phụ</h6>
                         <a href="#" class="btn btn-link">Đọc ngay</a>
                     </div>
                 </div>
                 <div class="card mb-3">
-                    <img src="assets/images/news3.jpg" class="card-img-top" alt="Tin phụ">
+                    <img src="assets/images/image3.jpg" class="card-img-top" alt="Tin phụ">
                     <div class="card-body">
                         <h6 class="card-title">Tiêu đề bài viết phụ</h6>
                         <a href="#" class="btn btn-link">Đọc ngay</a>
@@ -79,25 +79,25 @@
     </div>
 
     <!-- Footer -->
-<div style="background-color: #ffe066; padding: 30px 20px; margin-top: 20px; text-align: center; font-family: Arial, sans-serif;">
+<div style="background-color: blueviolet; padding: 30px 20px; margin-top: 20px; text-align: center; font-family: Arial, sans-serif;">
     <div style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
         
         <!-- Info Section -->
         <div style="flex: 1; padding: 20px; text-align: left;">
-            <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Thông Tin Liên Hệ</h3>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Báo tiếng Việt nhiều người xem nhất</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Thuộc Bộ Khoa học và Công nghệ</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Số giấy phép: 548/GP-BTTTT</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Do Bộ Thông tin và Truyền thông cấp ngày 24/08/2021</p>
+            <h3 style="font-size: 18px; font-weight: bold; color: white; margin-bottom: 15px;">Thông Tin Liên Hệ</h3>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Báo tiếng Việt nhiều người xem nhất</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Thuộc Bộ Khoa học và Công nghệ</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Số giấy phép: 548/GP-BTTTT</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Do Bộ Thông tin và Truyền thông cấp ngày 24/08/2021</p>
         </div>
 
         <!-- Contact Section -->
         <div style="flex: 1; padding: 20px; text-align: left; margin-left: 50px;"> <!-- Đẩy sang bên phải -->
-            <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Thông Tin Liên Lạc</h3>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Tổng biên tập: Đỗ Phương Quỳnh</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Địa chỉ: Tòa A FPT Tower, Dịch Vọng, Cầu Giấy, Hà Nội</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Điện thoại: 024 7300 8899</p>
-            <p style="margin: 10px 0; font-size: 14px; color: #666;">Email: nentangweb@gmail.com</p>
+            <h3 style="font-size: 18px; font-weight: bold; color: white; margin-bottom: 15px;">Thông Tin Liên Lạc</h3>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Tổng biên tập: Đỗ Phương Quỳnh</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Địa chỉ: Tòa A FPT Tower, Dịch Vọng, Cầu Giấy, Hà Nội</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Điện thoại: 024 7300 8899</p>
+            <p style="margin: 10px 0; font-size: 14px; color: white;">Email: nentangweb@gmail.com</p>
         </div>
         
     </div>
